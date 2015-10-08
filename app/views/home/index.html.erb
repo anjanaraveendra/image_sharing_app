@@ -7,8 +7,10 @@
 <br/><br/>
 
 <% @galleries.each do |gallery| %>
+<div id="dimensions">
 <%= link_to image_tag(gallery.gallery_attachments.first.avatar_url), gallery %>
-<%= gallery.title %>
+</div>
+<%= gallery.title %><br/><br/>
 <% end %>
 </div>
 <br><br/>
