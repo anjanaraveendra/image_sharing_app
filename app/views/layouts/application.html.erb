@@ -20,6 +20,7 @@
   </head>
   <body>
     <!-- Single button -->
+<% if user_signed_in? %>
 <div class="btn-group">
   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Click <span class="caret"></span>
@@ -31,6 +32,8 @@
 
   <%= link_to "Home", home_index_path %>
 </div>
+
+<% end %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <ul class="hmenu">
