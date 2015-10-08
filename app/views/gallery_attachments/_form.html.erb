@@ -1,8 +1,12 @@
 <%= image_tag @gallery_attachment.avatar %>
 <%= form_for(@gallery_attachment) do |f| %>
   <div class="field">
+    <%= f.label :tag_line %><br>
+    <%= f.text_field :tag_line %>
+  </div>
+  <div class="field">
     <%= f.label :avatar %><br>
-    <%= f.text_field :avatar %>
+    <%= f.file_field :avatar %>
   </div>
   <div class="actions">
     <%= f.submit %>

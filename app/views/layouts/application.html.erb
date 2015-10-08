@@ -19,6 +19,15 @@
     <![endif]-->
   </head>
   <body>
+    <!-- Single button -->
+<div class="btn-group">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Click <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
+  </ul>
+</div>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <ul class="hmenu">

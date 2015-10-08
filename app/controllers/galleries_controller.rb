@@ -28,6 +28,7 @@ class GalleriesController < ApplicationController
   # POST /galleries.json
   def create
     @gallery = Gallery.new(gallery_params)
+    @gallery.user_id = current_user.id
     if params[:gallery_attachments]['avatar'].count < 26
       respond_to do |format|
         if @gallery.save
@@ -82,6 +83,6 @@ class GalleriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gallery_params
-      params.require(:gallery).permit(:title, gallery_attachments_attributes: [:id, :gallery_id, :avatar])
+      params.require(:gallery).permit(:title, :user_id ,gallery_attachments_attributes: [:id, :gallery_id, :avatar])
     end
 end

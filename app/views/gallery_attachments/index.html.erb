@@ -14,8 +14,8 @@
   <tbody>
     <% @gallery_attachments.each do |gallery_attachment| %>
       <tr>
-        <td><%= gallery_attachment.gallery_id %></td>
-        <td><%= gallery_attachment.avatar %></td>
+        <td><%= gallery_attachment.tag_line %></td>
+        <td><%= image_tag gallery_attachment.avatar.url %></td>
         <td><%= link_to 'Show', gallery_attachment %></td>
         <td><%= link_to 'Edit', edit_gallery_attachment_path(gallery_attachment) %></td>
         <td><%= link_to 'Destroy', gallery_attachment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
