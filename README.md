@@ -1,4 +1,4 @@
-# image_sharing_app
+# Image_sharing_app
 
 1) Clone a repo --> git@github.com:anjanaraveendra/image_sharing_app.git
 
@@ -6,7 +6,7 @@
 
 3) bundle exec rake db:migrate
 
-Usage
+# Usage
 
 1) Login/Sign Up
 
