@@ -29,7 +29,7 @@
     <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
   </ul>
   <br/>  <br/>
-
+<%= render 'layouts/nav' %>
   <%= link_to "Home", home_index_path %><br/>
   <%= link_to "My Galleries", home_user_gallery_path %><br/>
   <%= link_to "My Images", home_user_image_path %>
