@@ -11,6 +11,11 @@
 <%= image_tag gallery.avatar_url %>
 </div>
 <%= gallery.tag_line %> | <%= username(gallery.try(:user_id)) %><br/><br/>
+<% if current_user.id ==  gallery.user_id %>
+<%= link_to 'Edit', edit_gallery_attachment_path(gallery) %>
+<% end %> |
+<%= link_to 'Back', gallery_attachments_path %>
 <% end %>
 </div>
 <br><br/>
+
