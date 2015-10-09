@@ -56,10 +56,12 @@ before_action :set_gallery_attachment, only: [:show, :edit, :update, :destroy]
   # DELETE /gallery_attachments/1
   # DELETE /gallery_attachments/1.json
   def destroy
-    @gallery_attachment.destroy
-    respond_to do |format|
-      format.html { redirect_to gallery_attachments_url, notice: 'Gallery attachment was successfully destroyed.' }
-      format.json { head :no_content }
+    unless current_user.id == @gallery_attachment.user_id
+      @gallery_attachment.destroy
+      respond_to do |format|
+        format.html { redirect_to gallery_attachments_url, notice: 'Gallery attachment was successfully destroyed.' }
+        format.json { head :no_content }
+      end
     end
   end
 
