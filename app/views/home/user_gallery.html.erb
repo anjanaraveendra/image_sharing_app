@@ -1,0 +1,16 @@
+<div align="center">
+
+<%= link_to 'New Gallery', new_gallery_path %> | <%= link_to 'New Image', new_gallery_attachment_path %> | <%= link_to 'Back', galleries_path %>
+<br/>
+
+
+<br/><br/>
+
+<% @galleries.each do |gallery| %>
+<div id="dimensions">
+<%= link_to image_tag(gallery.gallery_attachments.first.avatar_url), gallery %>
+</div>
+<%= gallery.title %> | <%= username(gallery.try(:user_id)) %><br/><br/>
+<% end %>
+</div>
+<br><br/>
