@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Striped</title>
+    <title>Image Sharing</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
@@ -18,8 +18,9 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body id="color">
     <!-- Single button -->
+<% if user_signed_in? %>
 <div class="btn-group">
   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Click <span class="caret"></span>
@@ -29,8 +30,12 @@
   </ul>
   <br/>  <br/>
 
-  <%= link_to "Home", home_index_path %>
+  <%= link_to "Home", home_index_path %><br/>
+  <%= link_to "My Galleries", home_user_gallery_path %><br/>
+  <%= link_to "My Images", home_user_image_path %>
 </div>
+
+<% end %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <ul class="hmenu">

@@ -7,8 +7,10 @@
 
 <p>
   <strong>Avatar:</strong>
-  <%= @gallery_attachment.avatar %>
+  <%= image_tag @gallery_attachment.avatar_url %>
 </p>
 
-<%= link_to 'Edit', edit_gallery_attachment_path(@gallery_attachment) %> |
+<% if current_user.id == @gallery_attachment.user_id %>
+<%= link_to 'Edit', edit_gallery_attachment_path(@gallery_attachment) %>
+<% end %> |
 <%= link_to 'Back', gallery_attachments_path %>
