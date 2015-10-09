@@ -7,7 +7,7 @@
 
 <p>
   <strong>Avatar:</strong>
-  <%= @gallery_attachment.avatar %>
+  <%= image_tag @gallery_attachment.avatar_url %>
 </p>
 
 <% if current_user.id == @gallery_attachment.user_id %>
