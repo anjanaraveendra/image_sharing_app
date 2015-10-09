@@ -12,4 +12,4 @@
 
 2) You will be directed to home page where you can see the album uploaded by other users(limit -> 25)
 
-3) There you will have a link to New Gallery where you can upload upto 25 images and if you want to upload a  single image user New Image link 
+3) There you will have a link to New Gallery where you can upload upto 25 images and if you want to upload a  single image user New Image link # rails_featured_app
