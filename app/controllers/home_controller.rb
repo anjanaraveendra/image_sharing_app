@@ -9,4 +9,8 @@ class HomeController < ApplicationController
   	@galleries = Gallery.where('user_id = ?',current_user.id)
   end
 
+  def user_image
+  	@images = GalleryAttachment.where('user_id = ?',current_user.id)
+  end
+
 end
