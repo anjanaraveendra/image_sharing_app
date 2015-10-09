@@ -41,26 +41,30 @@ before_action :set_gallery_attachment, only: [:show, :edit, :update, :destroy]
   # PATCH/PUT /gallery_attachments/1
   # PATCH/PUT /gallery_attachments/1.json
   def update
-    @gallery_attachment.user_id = current_user.id
-    respond_to do |format|
-      if @gallery_attachment.update(gallery_attachment_params)
-        if @gallery_attachment.gallery
-         format.html { redirect_to @gallery_attachment.gallery, notice: 'Gallery attachment was successfully updated.' }
-        else
-         format.html { render :show, notice: 'Gallery attachment was successfully updated.' }
-        end
-      end 
+    if current_user.id == @gallery_attachment.user_id
+      @gallery_attachment.user_id = current_user.id
+      respond_to do |format|
+        if @gallery_attachment.update(gallery_attachment_params)
+          if @gallery_attachment.gallery
+           format.html { redirect_to @gallery_attachment.gallery, notice: 'Gallery attachment was successfully updated.' }
+          else
+           format.html { render :show, notice: 'Gallery attachment was successfully updated.' }
+          end
+        end 
+      end
     end
   end
 
   # DELETE /gallery_attachments/1
   # DELETE /gallery_attachments/1.json
   def destroy
-    unless current_user.id == @gallery_attachment.user_id
-      @gallery_attachment.destroy
-      respond_to do |format|
-        format.html { redirect_to gallery_attachments_url, notice: 'Gallery attachment was successfully destroyed.' }
-        format.json { head :no_content }
+    if current_user.id == @gallery_attachment.user_id
+      unless current_user.id == @gallery_attachment.user_id
+        @gallery_attachment.destroy
+        respond_to do |format|
+          format.html { redirect_to gallery_attachments_url, notice: 'Gallery attachment was successfully destroyed.' }
+          format.json { head :no_content }
+        end
       end
     end
   end
