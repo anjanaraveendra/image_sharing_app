@@ -1,14 +1,12 @@
 <div align="center">
 
 <%= link_to 'New Gallery', new_gallery_path %> | <%= link_to 'New Image', new_gallery_attachment_path %> | <%= link_to 'Back', galleries_path %>
-<br/>
 
 <div class="row">
   <div class="spacer"></div>
-  <div class="container text-center jumbotron">
-    <h1>Inbox System Rails</h1>
+  <div class="container text-right">
     <% if user_signed_in? %>
-        <%= link_to "New Conversation", new_conversation_path, class: "btn btn-info btn-lg" %>
+        <%= link_to "New Conversation", new_conversation_path, class: "btn btn-info btn-lg" %><br/><br/>
         <%= link_to "Go To Inbox", mailbox_inbox_path, class: "btn btn-primary btn-lg" %>
     <% else %>
         <p>You can log in as default user in one window with email: <strong>default-user@email.com</strong>
@@ -20,11 +18,6 @@
   </div>
 </div>
 
-
-
-
-<br/><br/>
-
 <% @galleries.each do |gallery| %>
 <div id="dimensions">
 <%= link_to image_tag(gallery.gallery_attachments.first.avatar_url), gallery %>
@@ -32,4 +25,3 @@
 <%= gallery.title %> | <%= username(gallery.try(:user_id)) %><br/><br/>
 <% end %>
 </div>
-<br><br/>
