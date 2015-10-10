@@ -9,7 +9,7 @@
         <span class="icon-bar"></span>
       </button>
       <%= link_to "Home", root_path, class: "navbar-brand" %>
-      <% if user_signed_in? %>
+      <% if user_signed_in? && current_user.avatar.present? %>
       <%= image_tag current_user.avatar.url, class: "navbar-brand" %>
       <% end %>
     </div>
