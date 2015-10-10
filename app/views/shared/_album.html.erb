@@ -1,0 +1,5 @@
+<li id="<%= album.id %>">
+  <%= image_tag album.photo.url(:thumb) %>
+  <span class="album_title"><%= album.album_title %></span>
+  <%= render 'shared/delete_links_album', bar:album %>
+</li>

@@ -1,27 +1,36 @@
 <% provide(:title, @user.first_name) %>
 <div class="row">
-  
-  </aside> -->
-  <div class="span6">
-    <%= render 'follow_form' if signed_in? %>
-   <% @user ||= current_user %>
-   <div class="stats">
-
-<div class="stats">
-  <a href="<%= following_user_path(@user) %>">
-    <strong id="following" class="stat">
-      <%= @user.followed_users.count %>
-    </strong>
-    following
-  </a>
-  <a href="<%= followers_user_path(@user) %>">
-    <strong id="followers" class="stat">
-      <%= @user.followers.count %>
-    </strong>
-    followers
-  </a>
-  
-</div>
-  </div>
-</div>
+  <aside class="span6">
+    <section>
+      <h1>
+        <%= image_tag current_user.avatar.url, id: "circle_image" %>
+        <%= @user.first_name %>
+      </h1>
+    </section>
+    <div class="stats">
+      <a href="<%= following_user_path(@user) %>">
+        <strong id="following" class="stat">
+          <%= @user.followed_users.count %>
+        </strong>
+        following
+      </a>
+      <a href="<%= followers_user_path(@user) %>">
+        <strong id="followers" class="stat">
+          <%= @user.followers.count %>
+        </strong>
+        followers
+      </a>
+    </div>
+    <br/><br/><%= render 'follow_form' if signed_in? %>
+    <section>
+    <% if Gallery.all.where('user_id = ?',current_user.id).any? %>
+      <%#= page_entries_info @galleries %>
+      <ol class="galleries">
+        <h3>Albums</h3>
+        <%= render @galleries %>
+      </ol>
+      <%#= will_paginate @albums %>
+    <% end %>
+    </section>  
+  </aside>
 </div>

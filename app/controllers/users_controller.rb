@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
   def show 
     @user = User.find(params[:id])
+    @galleries = Gallery.all.where('user_id = ?',current_user.id)#.paginate(page: params[:page], :order => 'title asc', :per_page => 5)
   end
 
   def new

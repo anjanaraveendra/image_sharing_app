@@ -1,0 +1,5 @@
+<li id="<%= gallery.id %>">
+  <%= image_tag gallery.gallery_attachments.last.avatar.url,:id => "circle" %>
+  <span class="title"><%= gallery.title %></span>
+  <%= render 'shared/delete_links_album', bar:gallery %>
+</li>

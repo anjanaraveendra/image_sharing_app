@@ -33,7 +33,7 @@ class GalleriesController < ApplicationController
       respond_to do |format|
         if @gallery.save
             params[:gallery_attachments]['avatar'].each do |a|
-              @gallery_attachment = @gallery.gallery_attachments.create!(:avatar => a)
+              @gallery_attachment = @gallery.gallery_attachments.create!(:avatar => a,:user_id => current_user.id)
             end
          
           format.html { redirect_to @gallery, notice: 'Gallery was successfully created.' }
