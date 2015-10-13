@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyString
+  gallary_type_id: 1
+  gallary_type: MyString
+
+two:
+  description: MyString
+  gallary_type_id: 1
+  gallary_type: MyString

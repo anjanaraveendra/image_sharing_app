@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151010065230) do
+ActiveRecord::Schema.define(version: 20151013064513) do
+
+  create_table "comments", force: :cascade do |t|
+    t.string   "description"
+    t.integer  "gallary_type_id"
+    t.string   "gallary_type"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "galleries", force: :cascade do |t|
     t.string   "title"
