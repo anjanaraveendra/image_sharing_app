@@ -18,7 +18,7 @@
         <% if user_signed_in? %>
             <li><%= link_to "#{current_user.first_name}", home_user_gallery_path %></li>
             <li><%= link_to "My Images", home_user_image_path %></li>
-            <li><%= link_to "Inbox", mailbox_inbox_path %></li>
+            <li><%= link_to "Inbox", mailbox_inbox_path %><span class="label label-danger pull-right"><%=unread_messages_count if unread_messages_count != 0 %></span></li>
            
             <li><%#= link_to "Logout", edestroy_user_session_path, method: :delete %></li>
              <li id="fat-menu" class="dropdown">
