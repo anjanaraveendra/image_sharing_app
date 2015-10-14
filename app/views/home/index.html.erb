@@ -7,5 +7,9 @@
 <%= link_to image_tag(gallery.gallery_attachments.first.avatar_url), gallery %>
 </div>
 <%= gallery.title %> | <%= username(gallery.try(:user_id)) %><br/><br/>
+
+<%= render partial: 'comments/comments', locals: {commentable: gallery} %>
+<%= render partial: 'comments/form', locals: {commentable: gallery} %><br/>
+<%# end %>
 <% end %>
 </div>

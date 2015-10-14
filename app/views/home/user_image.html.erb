@@ -11,6 +11,8 @@
 <%= image_tag gallery.avatar_url %>
 </div>
 <%= gallery.tag_line %> | <%= username(gallery.try(:user_id)) %><br/><br/>
+<%= render partial 'comments/comments', locals: {commentable: gallery} %>
+
 <% if current_user.id ==  gallery.user_id %>
 <%= link_to 'Edit', edit_gallery_attachment_path(gallery) %>
 <% end %> |

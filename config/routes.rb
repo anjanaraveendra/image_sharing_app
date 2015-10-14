@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
-  resources :gallery_attachments
-  resources :galleries
+
+
+  resources :gallery_attachments do
+    resources :comments, module: :gallery_attachments 
+  end
+
+  resources :galleries do
+    resources :comments, module: :galleries
+  end
+
   get 'home/index'
 
   devise_for :users

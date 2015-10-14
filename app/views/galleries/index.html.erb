@@ -19,8 +19,10 @@
         <% if current_user.id == gallery.user_id %>
           <td><%= link_to 'Edit', edit_gallery_path(gallery) %></td>
           <td><%= link_to 'Destroy', gallery, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= render partial 'comments/comments', locals: {commentable: gallery} %></td>
         <% end %>
       </tr>
+      
     <% end %>
   </tbody>
 </table>
