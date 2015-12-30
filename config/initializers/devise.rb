@@ -6,13 +6,14 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` on Rails 4+ applications as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'b9fe73f9e79101c23711e38c364b4962643ee35a0a62f77c2263e7d0ba0ca56bd69b97d4dafc20d4c552580a8b52c3175d436327c01b7b55fbec64778a3aeac1'
+  # config.secret_key = '6daa6af29d1e41844047dd17055f44cc77e801c87efc7b0d2c563a35add9ab32730bb45a7c95522029da9dc79dc4195c0da68dfe12900414e29830c14af904c0'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.secret_key = '0102ab0665bf43e7759cf2f9495883731d055c7c57764d92c882c0066eb735d7227e0ca2735d40a199b0cac407d2779ff33b152d4d19b359a16365be11996ad2'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -22,7 +23,7 @@ Devise.setup do |config|
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
   require 'devise/orm/active_record'
-
+  #config.authentication_keys = [:first_name,:last_name]
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
   # just :email. You can configure it to use [:username, :subdomain], so for
@@ -99,7 +100,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = 'aafdf53ce49679ad88eab550609d5794fda13e813ca354be153c75a7bc45eb64b47eb99d8ed587fd9c6440f4e0cb614d317f3288d6e6e6f4bb25b6ae19bdee23'
+  # config.pepper = 'b7c0cc87f1f1f1712c8879b5080936bb7196e611791f228a408ef7c37626c0009ac6c599efcabc29ea7b1fdeaa5c492fd9c8e414c9651bae5f3a62507b344364'
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
